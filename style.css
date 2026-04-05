@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+:root{
+    font-family: "MedievalSharp", cursive;
+    font-family: "Caveat", cursive;
+
+    /* COLOR THEME BY AI */
+    --bg-main: #2f1b12;      /* dark wood background */
+    --bg-secondary: #4b2e2e; /* tavern walls */
+    
+    --accent: #c89b3c;       /* gold (buttons, highlights) */
+    --accent-soft: #e6c77a;  /* lighter gold */
+
+    --text-main: #f5e6c8;    /* warm readable text */
+    --text-muted: #d2b48c;   /* softer text */
+
+    --card-bg: #3a2418;      /* panels/sections */
+
+    --border-roundedness: 15px;
+}
+
 #magic-canvas{
     position: fixed;
     top: 0;
@@ -9,3 +31,241 @@
     filter: blur(2px);
 }
 
+* {
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: 'Caveat', cursive;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+header {
+    background-color: var(--bg-secondary);
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    text-align: center;
+    font-family: "MedievalSharp", cursive;
+}
+
+
+header .banner{
+    background:  url("./images/banner.png");
+    background-size: cover;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    height: 300px;
+    border-bottom: 2px solid var(--accent);
+}
+
+
+/* NAVBAR */
+
+nav{
+    padding: 20px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: var(--accent);
+}
+
+
+section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-roundedness);
+    padding: 20px;
+    border: 1px solid rgba(200, 155, 60, 0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+section h2{
+    text-align: center;
+    color: var(--accent);
+    font-family: "MedievalSharp", cursive;
+}
+
+
+
+
+.grid{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-areas: 
+    "special menu menu"
+    "about menu menu"
+    "contact menu menu";
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.menu-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "bev food";
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu-grid  h3{
+    text-align: left;
+    color: var(--accent);
+    font-family: "MedievalSharp", cursive;
+}
+
+
+
+.menu{
+    border-radius: var(--border-roundedness);
+    /* border: 1px solid rgba(200, 155, 60, 0.2); */
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.menu-beverages{ grid-area: bev; }
+
+.menu-food{ grid-area: food; }
+
+.menu-item h3{
+    font-family: "MedievalSharp", cursive;
+    margin: 0;
+}
+
+.menu-item{
+    padding: 20px;
+    
+}
+.menu-item:hover{
+    outline: 1px solid rgba(200, 155, 60, 0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: var(--bg-main);
+    border-radius: 20px;
+}
+
+button{
+    outline: 1px solid rgba(200, 155, 60, 0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
+    font-family: "MedievalSharp", cursive;
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: .3s linear;
+}
+button:hover{
+    box-shadow: 0 0 10px rgba(219, 219, 219, 0.5);
+    background-color: var(--text-muted);
+    color: var(--bg-main);
+}
+
+
+section#hero{
+    border-radius: 0;
+    border: none;
+    text-align: center;
+    font-family: "MedievalSharp", cursive;
+    color:var(--text-muted);
+}
+
+
+section#special{
+    grid-area: special;
+    
+}
+section#menu{
+    grid-area: menu;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* CONTACT SECTION */
+section#contact{
+    grid-area: contact;
+}
+
+section#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+section#contact form input {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid rgba(200, 155, 60, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+}
+section#contact form textarea{
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid rgba(200, 155, 60, 0.3);
+    border-radius: 10px;
+    padding: 12px;
+    resize: vertical;
+    font-size: 1rem;
+    width: 100%;
+    min-height: 120px;
+}
+
+
+section#menu ul{
+    list-style: none;
+    padding: 0;
+}
+
+section#about{
+    grid-area:about;
+}
+
+
+footer{
+    padding: 20px;
+    font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "special"
+            "menu"
+            "about"
+            "contact";
+    }
+
+    .menu-grid{
+        grid-template-columns: auto;
+        grid-template-areas:
+            "bev"
+            "food";
+    }
+
+
+}
